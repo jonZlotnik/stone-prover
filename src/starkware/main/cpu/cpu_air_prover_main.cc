@@ -26,12 +26,13 @@
 #include "starkware/utils/profiling.h"
 #include "starkware/utils/stats.h"
 
-int main(int argc, char** argv) {
-  using namespace starkware;       // NOLINT
-  using namespace starkware::cpu;  // NOLINT
+int main(int argc, char **argv)
+{
+  using namespace starkware;      // NOLINT
+  using namespace starkware::cpu; // NOLINT
   gflags::SetVersionString(GetProverVersionString());
   gflags::ParseCommandLineFlags(&argc, &argv, true);
-  google::InitGoogleLogging(argv[0]);  // NOLINT
+  google::InitGoogleLogging(argv[0]); // NOLINT
 
   CpuAirStatement statement(GetParametersInput()["statement"], GetPublicInput(), GetPrivateInput());
   ProfilingBlock profiling_block("Prover", 0);

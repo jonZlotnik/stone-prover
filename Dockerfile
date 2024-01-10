@@ -50,3 +50,6 @@ RUN cpu_air_prover \
     --parameter_file=cpu_air_params.json
 
 RUN cpu_air_verifier --in_file=fibonacci_proof.json && echo "Successfully verified example proof."
+
+RUN apt update
+RUN apt install -y gdb
